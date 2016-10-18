@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>试验阶段特性 &#8212; Scrapy 0.24.1 文档</title>
+    
+    <link rel="stylesheet" href="../_static/scrapydoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.24.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="top" title="Scrapy 0.24.1 文档" href="../index.html" />
+    <link rel="prev" title="Scrapy 0.25 文档" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+    
+  <div class="section" id="experimental">
+<span id="id1"></span><h1>试验阶段特性<a class="headerlink" href="#experimental" title="永久链接至标题">¶</a></h1>
+<p>这部分介绍一些正处于试验阶段的Scrapy特性，
+这些特性所涉及到的函数接口等还不够稳定，
+但会在以后的发布版中趋于完善。所以在使用这些特性过程中需更谨慎，
+并且最好订阅我们的 <a class="reference external" href="http://scrapy.org/community/">邮件列表</a> 以便接收任何有关特性改变的通知。</p>
+<p>虽然这些特性不会频繁的被修改，但是这部分文档仍有可能是过时的、
+不完整的或是与已经稳定的特性文档重复。所以你需要自行承担使用风险。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">本部分文档一直处于修改中。请自行承担使用风险。</p>
+</div>
+<div class="section" id="id3">
+<h2>使用外部库插入命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>你可以使用外部库通过增加 <cite>scrapy.commands</cite> 部分到 <cite>setup.py</cite> 的entry_points中来插入Scrapy命令。</p>
+<p>增加 <cite>my_command</cite> 命令的例子:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="k">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;scrapy-mymodule&#39;</span><span class="p">,</span>
+  <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;scrapy.commands&#39;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">&#39;my_command=my_scrapy_module.commands:MyCommand&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+ <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">试验阶段特性</a><ul>
+<li><a class="reference internal" href="#id3">使用外部库插入命令</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="上一章">Scrapy 0.25 文档</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/experimental/index.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="footer">
+      &copy;2008-2014, written by Scrapy developers, translated by Summer&Friends.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/experimental/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    
+
+  </body>
+</html>
